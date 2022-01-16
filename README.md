@@ -38,3 +38,14 @@ $ git clone https://github.com/dreamscached/herokude HerokuDE
 $ docker build --rm -t herokude:ubuntu20.04 .
 $ docker run --rm -d --name herokude -e PORT=80 -p 80:80 herokude:ubuntu20.04
 ```
+
+## Configuration
+
+Image has few environment variables you can use to somehow customize your
+instance.
+
+| Variable    | Default value        | Description                                                              |
+|-------------|----------------------|--------------------------------------------------------------------------|
+| GEOMETRY    | 1920x1080x16         | Defines screen geometry in format WIDTHxHEIGHTxDEPTH                     |
+| PORT        | 8080                 | Defines port that NoVNC will listen to                                   |
+| COMMANDLINE | bash /data/launch.sh | Defines command line to run upon initial setup of window manager and VNC |                    
