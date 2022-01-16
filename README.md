@@ -26,8 +26,8 @@ Here, the following components are used:
 ### Deploying to Heroku (with Heroku CLI)
 
 ```shell
-$ heroku -a <app-name> container:push web
-$ heroku -a <app-name> container:release web
+$ heroku container:push -a <app-name> web
+$ heroku container:release -a <app-name> web
 ```
 
 
