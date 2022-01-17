@@ -18,5 +18,6 @@
       "description": "Defines command line to run upon initial setup of window manager and VNC",
       "value": "bash /data/launch.sh"
     }
-  }
+  },
+  "stack": "container"
 }
