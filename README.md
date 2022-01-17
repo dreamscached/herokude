@@ -23,12 +23,18 @@ Here, the following components are used:
 
 ## Usage
 
-### Deploying to Heroku (with Heroku CLI)
+### Deploying to Heroku
+
+#### With Heroku CLI
 
 ```shell
 $ heroku container:push -a <app-name> web
 $ heroku container:release -a <app-name> web
 ```
+
+#### With Heroku template
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dreamscached/herokude)
 
 
 ### Running locally

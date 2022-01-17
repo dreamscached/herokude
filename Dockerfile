@@ -16,5 +16,5 @@ COPY launch.sh /data/launch.sh
 # packages here to speed up consequent builds by letting Docker reuse
 # previous steps without full rebuild.
 
-# As an example, here's xterm install line (uncomment it.)
-#RUN apt install xterm
+# As an example, here's xterm install line.
+RUN apt install xterm
