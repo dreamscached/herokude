@@ -17,4 +17,4 @@ COPY launch.sh /data/launch.sh
 # previous steps without full rebuild.
 
 # As an example, here's xterm install line.
-RUN apt install xterm
+# RUN apt install xterm
