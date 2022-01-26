@@ -12,3 +12,4 @@
 
 # As an example, here you can have Xterm coprocess startup line.
 # xterm &
+gnome-terminal &
