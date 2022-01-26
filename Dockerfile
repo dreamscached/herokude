@@ -19,4 +19,5 @@ COPY launch.sh /data/launch.sh
 
 # As an example, here's installation of packages of minimal desktop.
 RUN DEBIAN_FRONTEND=noninteractive \
-    apt install -y nautilus firefox file-roller gnome-terminal
+    apt install -y nautilus firefox file-roller gnome-terminal \
+                   gnome-system-monitor gedit eog
