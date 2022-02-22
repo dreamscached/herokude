@@ -8,7 +8,8 @@ ENTRYPOINT [ "/data/docker_entrypoint.sh" ]
 
 ENV GEOMETRY=1920x1080x16 \
     PORT=8080 \
-    COMMANDLINE="bash /data/launch.sh"
+    COMMANDLINE="bash /data/launch.sh" \
+    PASSWORD=herokude
 
 COPY launch.sh /data/launch.sh
 

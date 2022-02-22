@@ -17,6 +17,10 @@
     "COMMANDLINE": {
       "description": "Defines command line to run upon initial setup of window manager and VNC",
       "value": "bash /data/launch.sh"
+    },
+    "PASSWORD": {
+      "description": "Password used to log in VNC session",
+      "value": "herokude"
     }
   },
   "stack": "container"
