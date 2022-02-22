@@ -19,7 +19,7 @@
       "value": "bash /data/launch.sh"
     },
     "PASSWORD": {
-      "description": "Password used to log in VNC session",
+      "description": "Defines password used to log in VNC session",
       "value": "herokude"
     }
   },
