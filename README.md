@@ -23,9 +23,9 @@ Here, the following components are used:
 ## Usage
 
 **NOTE:** This repository has three different branches with different 'presets' for deployment:
-* [`master` is a completely blank template with just WM installed](https://github.com/dreamscached/herokude/tree/master)
-* [`minimal` provides minimal viable desktop environment with browser, file manager, etc.](https://github.com/dreamscached/herokude/tree/minimal)
-* [`xterm` provides ultra-minimal desktop environment with only `xterm` installed atop of WM](https://github.com/dreamscached/herokude/tree/xterm)
+* [`master`](https://github.com/dreamscached/herokude/tree/master) is a completely blank template with just WM installed
+* [`minimal`](https://github.com/dreamscached/herokude/tree/minimal) provides minimal viable desktop environment with browser, file manager, etc.
+* [`xterm`](https://github.com/dreamscached/herokude/tree/xterm) provides ultra-minimal desktop environment with only `xterm` installed atop of WM
 
 ### Deploying to Heroku
 
