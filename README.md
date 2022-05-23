@@ -6,7 +6,6 @@ environment in Heroku to be able to run applications in it.
 Note however, even though this image was designed to work on Heroku, it also
 works as standalone Docker image that you can run locally yourself.
 
-
 ## How does it work
 
 Since Heroku [allows deployment of Docker images](https://devcenter.heroku.com/articles/build-docker-images-heroku-yml#heroku-yml-overview),
@@ -23,6 +22,11 @@ Here, the following components are used:
 
 ## Usage
 
+**NOTE:** This repository has three different branches with different 'presets' for deployment:
+* [`master` is a completely blank template with just WM installed](https://github.com/dreamscached/herokude/tree/master)
+* [`minimal` provides minimal viable desktop environment with browser, file manager, etc.](https://github.com/dreamscached/herokude/tree/minimal)
+* [`xterm` provides ultra-minimal desktop environment with only `xterm` installed atop of WM](https://github.com/dreamscached/herokude/tree/xterm)
+
 ### Deploying to Heroku
 
 #### With Heroku CLI
@@ -34,7 +38,19 @@ $ heroku container:release -a <app-name> web
 
 #### With Heroku template
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dreamscached/herokude)
+##### Blank (only WM)
+
+[![Deploy from master branch](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dreamscached/herokude/tree/master)
+
+
+##### Minimal (minimal DE)
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dreamscached/herokude/tree/minimal)
+
+
+##### XTerm (WM + XTerm)
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dreamscached/herokude/tree/xterm)
 
 
 ### Running locally
