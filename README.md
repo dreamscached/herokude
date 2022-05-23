@@ -38,19 +38,14 @@ $ heroku container:release -a <app-name> web
 
 #### With Heroku template
 
-##### Blank (only WM)
+| Blank (only WM)                 | Minimal (minimal DE)            | XTerm (WM + XTerm)              |
+|---------------------------------|---------------------------------|---------------------------------|
+| [![Heroku Deploy button][1]][2] | [![Heroku Deploy button][1]][3] | [![Heroku Deploy button][1]][4] |
 
-[![Deploy from master branch](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dreamscached/herokude/tree/master)
-
-
-##### Minimal (minimal DE)
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dreamscached/herokude/tree/minimal)
-
-
-##### XTerm (WM + XTerm)
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dreamscached/herokude/tree/xterm)
+[1]: https://www.herokucdn.com/deploy/button.svg
+[2]: https://heroku.com/deploy?template=https://github.com/dreamscached/herokude/tree/master
+[3]: https://heroku.com/deploy?template=https://github.com/dreamscached/herokude/tree/minimal
+[4]: https://heroku.com/deploy?template=https://github.com/dreamscached/herokude/tree/xterm
 
 
 ### Running locally
