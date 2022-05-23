@@ -2,7 +2,7 @@ name: Build docker image
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, xterm, minimal ]
     tags: [ 'v*.*.*' ]
 
 env:
@@ -12,7 +12,6 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -44,13 +43,18 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: branch
+
       - name: Build and push Docker image
         id: build-and-push
         uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}-${{ steps.branch.outputs.branch }}
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Sign the published Docker image
