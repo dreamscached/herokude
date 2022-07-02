@@ -11,4 +11,4 @@
 # launching multiple at once.
 
 # As an example, here you can have Xterm coprocess startup line.
-# xterm &
+xterm &
