@@ -36,6 +36,7 @@ $ heroku container:push -a <app-name> web
 $ heroku container:release -a <app-name> web
 ```
 
+
 #### With Heroku template
 
 | Blank (only WM)                 | Minimal (minimal DE)            | XTerm (WM + XTerm)              |
@@ -56,6 +57,7 @@ $ docker build --rm -t herokude:ubuntu20.04 .
 $ docker run --rm -d --name herokude -e PORT=80 -p 80:80 herokude:ubuntu20.04
 ```
 
+
 ## Configuration
 
 Image has few environment variables you can use to somehow customize your
@@ -65,5 +67,5 @@ instance.
 |-------------|----------------------|--------------------------------------------------------------------------|
 | GEOMETRY    | 1920x1080x16         | Defines screen geometry in format WIDTHxHEIGHTxDEPTH                     |
 | PORT        | 8080                 | Defines port that NoVNC will listen to                                   |
-| COMMANDLINE | bash /data/launch.sh | Defines command line to run upon initial setup of window manager and VNC |                    
-| PASSWORD    | herokude             | Defines password used to log in VNC session                              |        
+| COMMANDLINE | bash /data/launch.sh | Defines command line to run upon initial setup of window manager and VNC |
+| PASSWORD    | herokude             | Defines password used to log in VNC session                              |
