@@ -20,6 +20,19 @@ Here, the following components are used:
 * X11VNC as VNC server
 
 
+## Things to note
+
+This project is *an experiment, Proof-of-Concept* only intended to show that the
+implementation of an idea described above is possible. By using this project
+you may or may not be violating Heroku Terms of Service, and creators, contributors
+or maintainers of this repository are not liable for any sort of damage dealt
+as result of usage of this repository.
+
+Besides, using this image on Free dynos is troublesome due to soft memory
+limitations that let dyno stay up for a while even with quota exceeded, which
+may lead to unexpected process kills.
+
+
 ## Usage
 
 **NOTE:** This repository has three different branches with different 'presets' for deployment:
