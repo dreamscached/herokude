@@ -3,7 +3,7 @@ name: "Create Docker packages"
 on: [ "push" ]
 
 jobs:
-  build-master:
+  build:
     name: "Build from master branch"
     runs-on: "ubuntu-latest"
 
@@ -14,44 +14,11 @@ jobs:
         with:
           ref: "master"
 
-      - name: "Set up Docker Buildx"
-        id: "buildx"
-        uses: "docker/setup-buildx-action@v2"
-
-      - name: "Login to GitHub Container Registry"
-        uses: "docker/login-action@v2"
-        with:
-          registry: "ghcr.io"
-          username: "${{ github.actor }}"
-          password: "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: "Login to DockerHub Container Registry"
-        uses: "docker/login-action@v2"
-        with:
-          username: "dreamscached"
-          password: "${{ secrets.DOCKER_HUB_TOKEN }}"
-
-      - name: "Build Docker image"
-        uses: docker/build-push-action@v2
-        with:
-          builder: "${{ steps.buildx.outputs.name }}"
-          file: "Dockerfile"
-          tags: |
-            ghcr.io/dreamscached/herokude:master,
-            dreamscached/herokude:master
-          context: .
-          push: true
-
-  build-minimal:
-    name: "Build from minimal branch"
-    runs-on: "ubuntu-latest"
-
-    steps:
-
-      - name: "Checkout"
-        uses: "actions/checkout@v3"
-        with:
-          ref: "minimal"
+      - name: "Extract branch name"
+        id: "branch"
+        shell: "bash"
+        run: |
+          echo "::set-output name=name::$(echo ${GITHUB_REF#refs/heads/})"
 
       - name: "Set up Docker Buildx"
         id: "buildx"
@@ -76,46 +43,7 @@ jobs:
           builder: "${{ steps.buildx.outputs.name }}"
           file: "Dockerfile"
           tags: |
-            ghcr.io/dreamscached/herokude:minimal,
-            dreamscached/herokude:minimal
-          context: .
-          push: true
-
-  build-xterm:
-    name: "Build from xterm branch"
-    runs-on: "ubuntu-latest"
-
-    steps:
-
-      - name: "Checkout"
-        uses: "actions/checkout@v3"
-        with:
-          ref: "xterm"
-
-      - name: "Set up Docker Buildx"
-        id: "buildx"
-        uses: "docker/setup-buildx-action@v2"
-
-      - name: "Login to GitHub Container Registry"
-        uses: "docker/login-action@v2"
-        with:
-          registry: "ghcr.io"
-          username: "${{ github.actor }}"
-          password: "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: "Login to DockerHub Container Registry"
-        uses: "docker/login-action@v2"
-        with:
-          username: "dreamscached"
-          password: "${{ secrets.DOCKER_HUB_TOKEN }}"
-
-      - name: "Build Docker image"
-        uses: docker/build-push-action@v2
-        with:
-          builder: "${{ steps.buildx.outputs.name }}"
-          file: "Dockerfile"
-          tags: |
-            ghcr.io/dreamscached/herokude:xterm,
-            dreamscached/herokude:xterm
+            ghcr.io/dreamscached/herokude:${{ steps.branch.outputs.name }},
+            dreamscached/herokude:${{ steps.branch.outputs.name }}
           context: .
           push: true
