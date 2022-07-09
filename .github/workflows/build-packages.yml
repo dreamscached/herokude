@@ -77,7 +77,7 @@ jobs:
           context: .
           push: true
 
-  build-master:
+  build-xterm:
     name: "Build from xterm branch"
     steps:
 
