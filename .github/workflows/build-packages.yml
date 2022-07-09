@@ -5,6 +5,8 @@ on: [ "push" ]
 jobs:
   build-master:
     name: "Build from master branch"
+    runs-on: "ubuntu-latest"
+
     steps:
 
       - name: "Checkout"
@@ -42,6 +44,8 @@ jobs:
 
   build-minimal:
     name: "Build from minimal branch"
+    runs-on: "ubuntu-latest"
+
     steps:
 
       - name: "Checkout"
@@ -79,6 +83,8 @@ jobs:
 
   build-xterm:
     name: "Build from xterm branch"
+    runs-on: "ubuntu-latest"
+
     steps:
 
       - name: "Checkout"
